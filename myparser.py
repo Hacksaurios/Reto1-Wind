@@ -1,4 +1,7 @@
+#!/usr/bin/env python3
 from xml.sax import handler
+
+# --- Windmill class --- #
 
 class Windmill():
     def __init__(self):
@@ -12,8 +15,9 @@ class Windmill():
         self.accuracy = ''
 
     def __str__(self):
-        return f'{self.id},{self.lon},{self.lat},{self.systempower},{self.speed},{self.speedlimit},{self.speedavrg},{self.accuracy}'
+        return f'{self.id},{self.lat},{self.lon},{self.systempower},{self.speed},{self.speedlimit},{self.speedavrg},{self.accuracy}'
 
+# --- Sax parser class --- #
 
 class ContentGenerator(handler.ContentHandler):
 
@@ -33,6 +37,9 @@ class ContentGenerator(handler.ContentHandler):
         if name == 'coordinates':
             self.aux=True
         elif name == 'element' and self.aux:
+            for win in self.windmillList:
+                if self.windmill.id == win.id:
+                    return
             self.windmillList.append(self.windmill)
 
     def characters(self, content):

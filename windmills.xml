@@ -14793,7 +14793,7 @@
             <windmill.system.blades.speed.average>153 Km/h</windmill.system.blades.speed.average>
             <windmill.system.power>10 MW</windmill.system.power>
             <windmill.system.sensor.accuracy>96%</windmill.system.sensor.accuracy>
-            <windmill.system.sensor.blades.speed>199Km/h</windmill.system.sensor.blades.speed>
+            <windmill.system.sensor.blades.speed>199 Km/h</windmill.system.sensor.blades.speed>
          </properties>
          <type>Feature</type>
       </element>
